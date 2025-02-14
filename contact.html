@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+<div class="container">
+<header>
+    <a href="#" class="logo">Mahin's <span>Classes</span></a>
+    <div id="menu" class="fas fa-bars"></div>
+    <nav class="navbar">
+        <a href="home.html">home</a>
+        <a href="course.html">course</a>
+        <a href="teacher.html">teacher</a>
+        <a href="price.html">price</a>
+        <a href="review.html">review</a>
+        <a href="contact.html">contact</a>
+    </nav>
+</header>
+
+<h1 class="heading">contact us</h1>
+
+<section class="contact">
+
+<div class="image">
+    <img src="contact-img.svg" alt="">
+</div>
+
+<form onsubmit="showMessage()" id="contact">
+
+    <div class="inputBox">
+        <input type="text" placeholder="name">
+        <input type="email" placeholder="email">
+    </div>
+    <input type="text" placeholder="subject" class="box">
+    <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+    <input type="submit" class="btn" value="send">
+</form>
+</section>
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>about us</h3>
+            <p>Hello! I am Mahin Mehta , doing online classes for under graduate students</p>
+        </div>
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="home.html">home</a>
+            <a href="course.html">course</a>
+            <a href="teacher.html">teacher</a>
+            <a href="price.html">price</a>
+            <a href="review.html">review</a>
+            <a href="contact.html">contact</a>
+        </div>
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+        </div>
+
+        <div class="box">
+            <h3>contact us</h3>
+            <p> <i class="fas fa-phone"></i> 9586941495 </p>
+            <p> <i class="fas fa-envelope"></i> mahin.b@gmail.com </p>
+            <p> <i class="fas fa-map-marker-alt"></i> Ahmedabad,India</p>
+        </div>
+
+    </div>
+
+    <div class="credit"> The best <span> online classes </span> for studying </div>
+
+</section>
+
+</div>
+<script>
+    function showMessage()
+    {
+        alert("Thank you for contacting us");
+    }
+</script>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

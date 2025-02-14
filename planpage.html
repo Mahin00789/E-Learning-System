@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Page</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightgoldenrodyellow;
+        }
+        .container {
+        max-width: 400px;
+        margin: 50px auto;
+        background: linear-gradient(to right , #4caf50, #4586a0);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1{
+        text-align: center;
+    }
+    input[type="text"]
+    {
+        width : 100%;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: medium;
+        border-radius: 5px;
+    }
+    input[type="submit"]
+    {
+        width:100%;
+        margin-top: 5px;
+        background-color: lightsalmon;
+        padding: 10px;
+    }
+    input[type="submit"]:hover{
+        background-color: cadetblue;
+    }
+    .error-message {
+        color: red;
+        margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Plan Selection Form</h1>
+        <form id="planform" onsubmit="showAlert()">
+            <label for="Username">Enter your Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username here" required>
+            <div id="usernameError" class="Errormessage"></div>
+            <label for="subjects">Select the subjects you need to enroll in : </label><br>
+            <input type="checkbox" id="Front End Development" name="Subjects" value="Front End Development">
+                <label for="Front End Development">Front End Development</label><br>
+                <input type="checkbox" id="Back End Development" name="Subjects" value="Back End Development">
+                <label for="Back End Development">Back End Development</label><br>
+                <input type="checkbox" id="Full Stack Development" name="Subjects" value="Full Stack Development">
+                <label for="Full Stack Development">Full Stack Development</label><br>
+                <input type="checkbox" id="DSA" name="Subjects" value="DSA">
+                <label for="DSA">DSA</label><br>
+                <input type="checkbox" id="Python" name="Subjects" value="Python">
+                <label for="Python">Python Full Tutorial</label><br>
+                <input type="checkbox" id="Java" name="Subjects" value="Java">
+                <label for="Java">Java Fulll Tutorial</label><br>
+            <label for="Plan">Select your plan:</label><br>
+            <select id="options" name="options" onchange="calculateTotal()" required>
+                <option value="20">$20</option>
+                <option value="50">$50</option>
+                <option value="90">$90</option>
+                </select><br>
+            <label for="Months">Choose for how many months you want to take the plan:</label><br>
+            <select id="Months" name="Months" onchange="calculateTotal()" required>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                </select>
+                <br>
+                <label for="Payment">Select the mode of payment:</label><br>
+                <input type="radio" id="RTGS" name="Payment" value="RTGS" required>
+                <label for="RTGS">RTGS</label><br>
+                <input type="radio" id="NetBanking" name="Payment" value="Net Banking">
+                <label for="NetBanking">Net Banking</label><br>
+                <input type="radio" id="CreditCard" name="Payment" value="Credit Card">
+                <label for="CreditCard">Credit Card</label><br>
+                <input type="radio" id="BankTransfer" name="Payment" value="Bank Transfer">
+                <label for="BankTransfer">Bank Transfer</label><br>
+                
+                <label for="Total Price">Total Price:</label><br>
+                <input type="text" id="total" name="total" readonly>
+                <input type="submit" value="Submit">
+                <script>
+                    function calculateTotal() {
+                        var plan = parseInt(document.getElementById("options").value);
+                        var months = parseInt(document.getElementById("Months").value);
+                        var subjects = document.getElementsByName("Subjects");
+                        var totalSubjectsCost = 0;
+
+                        for (var i = 0; i < subjects.length; i++) {
+                            if (subjects[i].checked) {
+                              
+                                if (subjects[i].value === "Front End Development" || subjects[i].value === "Back End Development") {
+                                    totalSubjectsCost += 10; 
+                                } else if (subjects[i].value === "Full Stack Development" || subjects[i].value === "DSA") {
+                                    totalSubjectsCost += 20; 
+                                } else if (subjects[i].value === "Python" || subjects[i].value === "Java") {
+                                    totalSubjectsCost += 30;
+                                }
+                            }
+                        }
+
+                        var totalPrice = (plan + totalSubjectsCost) * months;
+                        document.getElementById("total").value = "$" + totalPrice;
+                    }
+
+                    function showAlert() {
+                        alert("Your response is recorded");
+                    }
+                </script>
+        </form>
+    </div>
+</body>
+</html>
