@@ -1,69 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: lightcyan;
+    }
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        background: linear-gradient(to right , #4caf50, #4586a0);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 
+    {
+        text-align: center;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] 
+    {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        width: 100%;
+        background-color: #3d4ddf;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 6px;
+    }
+    input[type="submit"]:hover {
+        background-color: #7445a0;
+    }
+    .error-message {
+        color: red;
+        margin-top: 10px;
+    }
+</style>
 </head>
-<body>  
+<body>
 <div class="container">
-<header>
-    <a href="#" class="logo">Mahin's <span>Classes</span></a>
-    <div id="menu" class="fas fa-bars"></div>
-    <nav class="navbar">
-        <a href="home.html">home</a>
-        <a href="course.html">course</a>
-        <a href="teacher.html">teacher</a>
-        <a href="price.html">price</a>
-        <a href="review.html">review</a>
-        <a href="contact.html">contact</a>
-    </nav>
-</header>
-<section class="home">
-    <div class="content">
-        <h3>E-learning is a better way of learning</h3>
-        <p>Education is the key to the mental, physical, spiritual, and social development of humans. It frames the different aspects of an individual’s life like the intellectual, social,
-             financial parts, to establish one as a self-reliant and independent human being.</p>
-        <a href="course.html" class="btn">get started</a>
-    </div>
-    <div class="image">
-        <img src="home-img.svg" alt="">
-    </div>
-</section>
-<section class="footer">
-    <div class="box-container">
-        <div class="box">
-            <h3>about us</h3>
-            <p>Hello! I am Mahin Mehta , doing online classes for under graduate students</p>
-        </div>
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="home.html">home</a>
-            <a href="course.html">course</a>
-            <a href="teacher.html">teacher</a>
-            <a href="price.html">price</a>
-            <a href="review.html">review</a>
-            <a href="contact.html">contact</a>
-        </div>
-        <div class="box">
-            <h3>follow us</h3>
-            <a href="#">facebook</a>
-            <a href="#">twitter</a>
-            <a href="#">instagram</a>
-            <a href="#">linkedin</a>
-        </div>
-        <div class="box">
-            <h3>contact us</h3>
-           <p> <i class="fas fa-phone"></i> 9586941495 </p>
-           <p> <i class="fas fa-envelope"></i> mahin.b@gmail.com </p>
-           <p> <i class="fas fa-map-marker-alt"></i> Ahmedabad,India</p>
-        </div>
-    </div>
-    <div class="credit"> The best <span> online classes </span> for studying </div>
-</section>
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+        <label for="username">Enter your Username</label>
+        <input type="text" id="username" name="username" placeholder="For Eg :- Mahin Mehta" required>
+        <div id="usernameError" class="error-message"></div>
+    
+        <label for="email">Enter your E-mail</label>
+        <input type="email" id="email" name="email" placeholder="For eg :- mbmehta@gmail.com" required>
+        <div id="emailError" class="error-message"></div>
+        
+        <label for="password">Enter Password</label>
+        <input type="password" id="password" name="password" placeholder="For eg :- 123Ma$MN" required>
+        <div id="passwordError" class="error-message"></div>
+        <label for="Confirmpassword">Confirm Password</label>
+        <input type="password" id="Confirmpassword" name="Confirmpassword" required>
+        <div id="cpasswordError" class="error-message"></div>
+
+        
+        <input type="submit" value="Submit">
+    </form>
 </div>
-<script src="script.js"></script>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) 
+    {
+        event.preventDefault();
+        
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var Confirmpassword=document.getElementById("Confirmpassword").value
+        
+        var usernameError = document.getElementById("usernameError");
+        var emailError = document.getElementById("emailError");
+        var passwordError = document.getElementById("passwordError");
+        var cpasswordError=document.getElementById("cpassworderror");
+        
+        usernameError.textContent = "";
+        emailError.textContent = "";
+        passwordError.textContent = "";
+        
+        if (!username) {
+            alert("Please fill out this field");
+            return;
+        }
+        
+        if (!email) {
+            alert("Please fill out this field");
+            return;
+        }
+        
+        if (!password) {
+            alert("Please fill out this field");
+            return;
+        }
+        if(!Confirmpassword)
+        {
+           alert("Enter correct password");
+           return;
+        }
+        if(password!=Confirmpassword)
+        {
+            alert("Please enter correct password");
+            return;
+        }
+        else if (username && email && password && Confirmpassword && password === Confirmpassword ) 
+        {
+            window.location.href = "home.html"; 
+        }
+        console.log("Username: " + username);
+        console.log("Email: " + email);
+        console.log("Password: " + password);
+        console.log("Password: " + Confirmpassword);
+    });
+</script>
 </body>
 </html>
