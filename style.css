@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 
 :root{
-  --violet:#3087b9;
-  --pink:#708a29;
+  --violet:#fff;
+  --pink:#fff;
   --gradient:linear-gradient(to right, var(--pink), var(--violet));
 
   
@@ -24,7 +24,7 @@ html{
 }
 
 body{
-  background:linear-gradient(to right,rgb(34, 201, 12),rgb(49, 198, 224));
+  background:linear-gradient(to right, #1E1E2F, #4B0082);
   padding:3rem 7%;
 }
 
@@ -33,7 +33,7 @@ section{
 }
 
 .container{
-  background:linear-gradient(to right, rgb(72, 72, 151),rgb(80, 148, 80));
+  background:linear-gradient(to right, #2C2C54, #8A2BE2);
   border-radius: .5rem;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
 }
@@ -89,7 +89,7 @@ header .logo span{
 header .navbar a{
   margin-left: 2rem;
   font-size: 2rem;
-  color:#333;
+  color:#fff;
 }
 
 header .navbar a:hover{
@@ -162,7 +162,7 @@ header .navbar a:hover{
   top:1rem; left:1rem;
   font-size: 2rem;
   padding:.5rem 1rem;
-  background:var(--pink);
+  background:#333333;
   color:#fff;
   border-radius: .5rem;
 }
@@ -174,7 +174,7 @@ header .navbar a:hover{
 }
 
 .course .box h3{
-  color:rgb(163, 62, 62);
+  color:rgb(126, 255, 51);
   font-size: 2.5rem;
 }
 
@@ -226,17 +226,17 @@ header .navbar a:hover{
 }
 
 .teacher .box h3{
-  color:var(--violet);
+  color:#fff;
   font-size: 2.5rem;
 }
 
 .teacher .box span{
-  color:rgb(88, 1, 59);
+  color:#00FFFF;
   font-size: 2rem;
 }
 
 .teacher .box p{
-  color:#c00808;
+  color:#FFD700;
   font-size: 1.5rem;
   padding:1rem 0;
 }
@@ -246,7 +246,7 @@ header .navbar a:hover{
   width:4rem;
   line-height: 4rem;
   font-size: 2rem;
-  background:var(--pink);
+  background:#333333;
   border-radius: .5rem;
   margin:.3rem;
   color:#fff;
@@ -265,21 +265,21 @@ header .navbar a:hover{
 .price .box{
   flex:1 1 30rem;
   text-align: center;
-  border:.1rem solid rgba(0,0,0,.1);
+  border:.1rem solid rgb(245, 240, 240);
   border-radius: .5rem;
 }
 
 .price .box h3{
   font-size: 2.5rem;
-  color:#333333;
+  color:#fff;
   padding:1.5rem 0;
 }
 
 .price .box .amount{
   font-size: 4.5rem;
-  color:#fff;
+  color:#fff; 
   padding:1rem 0;
-  background:var(--gradient);
+  background:#333;
   font-weight: bold;
 }
 
@@ -343,7 +343,7 @@ header .navbar a:hover{
 
 .review .box .student .student-info h3{
   font-size: 2rem;
-  color:#190879;
+  color:#EAEAEA;
 }
 
 .review .box .student .student-info span{
@@ -429,14 +429,14 @@ header .navbar a:hover{
 
 .footer .box-container .box p{
   font-size: 1.5rem;
-  color:#5aaf39;
+  color:#ffffff;
   padding:.7rem 0;
 }
 
 .footer .box-container .box a{
   display: block;
   font-size: 1.5rem;
-  color:#5aaf39;
+  color:#ffffff;
   padding:.7rem 0;
 }
 
@@ -456,7 +456,7 @@ header .navbar a:hover{
   padding-top: 2rem;
   text-align: center;
   border-top: .1rem solid rgba(0,0,0,.1);
-  color:#5aaf39;
+  color:#ffffff;
 }
 
 .footer .credit span{
